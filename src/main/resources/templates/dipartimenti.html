@@ -11,7 +11,7 @@
     <div>
         <h1>Dipartimenti</h1>
         <ul>
-            <li th:each="dipartimento : ${listaDipartimenti}" th:text="${dipartimento}"></li>
+            <li th:each="dipartimenti : ${listaDipartimenti}" th:text="${dipartimenti.getName()}"></li>
         </ul>
     </div>
         
