@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="it">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring University</title>
+</head>
+<body>
+    <div>
+        <h1>Dipartimenti</h1>
+        <ul>
+            <li th:each="dipartimento : ${listaDipartimenti}" th:text="${dipartimento}"></li>
+        </ul>
+    </div>
+        
+</body>
+</html>
