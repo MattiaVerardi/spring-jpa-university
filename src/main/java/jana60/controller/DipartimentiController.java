@@ -13,7 +13,7 @@ import jana60.repository.DipartimentoRepo;
 
 @Controller
 @RequestMapping("/")
-public class MainController {
+public class DipartimentiController {
 
 	@GetMapping("/dipartimenti")
 	public String dipartimenti(Model m) {
