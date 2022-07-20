@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jana60.model.Teachers;
@@ -23,6 +24,12 @@ public class TeachersController {
 		List<Teachers> listaTeachers = (List<Teachers>) repo.findAll();
 		m.addAttribute("listaTeachers", listaTeachers);
 		return "teachers";
+	}
 
+	@GetMapping("/{id}")
+	public String teachersDetail(Model m, @PathVariable(name = "id") Integer teachersPrimaryKey) {
+		Teachers currentTeachers = repo.findById(teachersPrimaryKey).get();
+		m.addAttribute("teachers", currentTeachers);
+		return "teachersDetails";
 	}
 }

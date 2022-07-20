@@ -18,7 +18,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/departments">Departments</a>
+                <a class="nav-link" th:classAppend="${current == 'departments'} ? active : not-active" href="/departments">Departments</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" th:classAppend="${current == 'degrees'} ? active : not-active" href="/degrees">Degrees</a>
