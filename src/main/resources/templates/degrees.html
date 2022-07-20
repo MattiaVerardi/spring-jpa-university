@@ -1,17 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
     <th:block th:replace="fragments :: risorse-head"></th:block>
     <title>Degrees</title>
   </head>
   <body>
   <nav th:replace="fragments :: navbar('degrees')"></nav>
+  <h1 class="text-center">Corsi di Laurea</h1>
+  <hr>
     <div class="container" th:if="${listaDegrees.size()>0}">
-      <table>
+      <table class="table">
         <thead>
           <tr>
             <th>id</th>
-            <th>departmentId</th>
+            <th>dipartimenti</th>
             <th>name</th>
             <th>level</th>
             <th>address</th>
@@ -21,8 +23,10 @@
         </thead>
           <tbody>
             <tr th:each="dg : ${listaDegrees}">
-              <td th:text="${dg.id}"></td>
-              <td th:text="${dg.departmentId}"></td>
+              <td>
+              <a th:href="@{|degrees/${dg.id}|}" th:text="${dg.id}"></a>
+              </td>
+              <td th:text="${dg.dipartimenti.name}"></td>
               <td th:text="${dg.name}"></td>
               <td th:text="${dg.level}"></td>
               <td th:text="${dg.address}"></td>

@@ -7,24 +7,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "departments")
-public class Dipartimenti {
+@Table(name = "teachers")
+public class Teachers {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private String name;
-
-	private String address;
-
+	private String surname;
 	private String phone;
-
 	private String email;
-
-	private String website;
-
-	private String headOfDepartment;
+	private String officeAddress;
+	private String officeNumber;
 
 	// getter e setter
 	public Integer getId() {
@@ -43,12 +38,12 @@ public class Dipartimenti {
 		this.name = name;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
 	public String getPhone() {
@@ -67,20 +62,20 @@ public class Dipartimenti {
 		this.email = email;
 	}
 
-	public String getWebsite() {
-		return website;
+	public String getOfficeAddress() {
+		return officeAddress;
 	}
 
-	public void setWebsite(String website) {
-		this.website = website;
+	public void setOfficeAddress(String officeAddress) {
+		this.officeAddress = officeAddress;
 	}
 
-	public String getHeadOfDepartment() {
-		return headOfDepartment;
+	public String getOfficeNumber() {
+		return officeNumber;
 	}
 
-	public void setHeadOfDepartment(String headOfDepartment) {
-		this.headOfDepartment = headOfDepartment;
+	public void setOfficeNumber(String officeNumber) {
+		this.officeNumber = officeNumber;
 	}
 
 }

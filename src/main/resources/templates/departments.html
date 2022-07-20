@@ -3,11 +3,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
      <th:block th:replace="fragments :: risorse-head"></th:block>
-    <title>Spring University</title>
+    <title>Departments</title>
 </head>
 <body>
+ <nav th:replace="fragments :: navbar('departments')"></nav>
     <div class = "container">
-        <h1>Dipartimenti</h1>
+        <h1 class="text-center">Dipartimenti</h1>
         <hr>
         <table class="table">
             <thead>
@@ -22,7 +23,9 @@
                 </tr>
             <tbody>
                 <tr th:each="d : ${listaDipartimenti}">
-                    <td th:text="${d.id}"></td>
+                    <td>
+                      <a th:href="@{|departments/${d.id}|}" th:text="${d.id}"></a>
+                    </td>
                     <td th:text="${d.name}"></td>
                     <td th:text="${d.address}"></td>
                     <td th:text="${d.phone}"></td>
