@@ -14,7 +14,7 @@
 		<h1>Department</h1>
 		</hr>
 		<ul class="list-group mx-auto w-25">
-			<li class="list-group-item" th:each="departments : ${departments}" th:text="${departments}"></li>
+			<li class="list-group-item" th:each="departments : ${departments}" th:text="${departments.getName}"></li>
 		</ul>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
