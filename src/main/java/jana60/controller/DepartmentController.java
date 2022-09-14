@@ -28,7 +28,7 @@ public class DepartmentController {
 
 	@GetMapping
 	public String departmentList(Model m) {
-		List<Department> departments = (List<Department>) repo.findAll();
+		List<Department> departments = (List<Department>) repo.findAllByOrderByNameDesc();
 		m.addAttribute("departments", departments);
 		return "/department/home";
 	}

@@ -2,20 +2,41 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<th:block th:replace="fragments/risorse :: risorse"></th:block>
 	<title>Department Home</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
 <body>
-	<div class="container text-center">
-		<h1>Department</h1>
+	<div>
+		<h1 class="text-center">Department</h1>
 		</hr>
-		<ul class="list-group mx-auto w-25">
+		<!--	<ul class="list-group mx-auto w-25">
 			<li class="list-group-item" th:each="departments : ${departments}" th:text="${departments.getName}"></li>
-		</ul>
+		</ul> -->
+		<table class="table">
+
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>address</th>
+					<th>phone</th>
+					<th>email</th>
+					<th>website</th>
+					<th>head of department</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dep : ${departments}">
+					<td th:text="${dep.name}"></td>
+					<td th:text="${dep.address}"></td>
+					<td th:text="${dep.phone}"></td>
+					<td th:text="${dep.email}"></td>
+					<td th:text="${dep.website}"></td>
+					<td th:text="${dep.headOfDepartment}"></td>
+				</tr>
+			</tbody>
+
+		</table>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
