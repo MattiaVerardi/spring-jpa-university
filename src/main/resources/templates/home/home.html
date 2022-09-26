@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<th:block th:replace="fragments/risorse :: head"></th:block>
+	<title>Home</title>
+</head>
+
+<body>
+	<nav th:replace="fragments/navbar :: navbar('home')"></nav>
+	<h1 class="container my-4 text-center fs-1">Hello, welcome to my Spring University Website!</h1>
+	<script th:replace="fragments/risorse :: script"></script>
+</body>
+
+</html>

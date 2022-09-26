@@ -4,12 +4,12 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import jana60.model.Department;
+import jana60.model.Departments;
 
-public interface DepartmentRepo extends CrudRepository<Department, Integer> {
+public interface DepartmentRepo extends CrudRepository<Departments, Integer> {
 
-	List<Department> findAllByOrderByName();
+	List<Departments> findAllByOrderByName();
 
-	List<Department> findAllByOrderByNameDesc();
+	List<Departments> findAllByOrderByNameDesc();
 
 }

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<th:block th:replace="fragments/risorse :: head"></th:block>
+	<title>Degrees</title>
+</head>
+
+<body>
+	<nav th:replace="fragments/navbar :: navbar('degrees')"></nav>
+	<div class="container">
+		<h1 class="text-center my-4">Degrees</h1>
+		</hr>
+		<table class="table my-4" th:if="${degrees.size()>0}">
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>level</th>
+					<th>address</th>
+					<th>email</th>
+					<th>website</th>
+					<th>department</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="deg : ${degrees}">
+					<td th:text="${deg.name}"></td>
+					<td th:text="${deg.level}"></td>
+					<td th:text="${deg.address}"></td>
+					<td th:text="${deg.email}"></td>
+					<td th:text="${deg.website}"></td>
+					<td th:text="${deg.departments.getName}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+	<div class="alert alert-info text-center my-4" role="alert" th:unless="${degrees.size() > 0}">There is nothing to
+		show</div>
+	<script th:replace="fragments/risorse :: script"></script>
+</body>
+
+</html>

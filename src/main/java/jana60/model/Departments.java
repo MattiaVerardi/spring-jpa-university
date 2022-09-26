@@ -1,30 +1,49 @@
 package jana60.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "departments")
-public class Department {
+public class Departments {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private String name;
+
 	private String address;
+
 	private String phone;
+
 	private String email;
+
 	private String website;
+
 	private String headOfDepartment;
+
+	@OneToMany
+	private List<Degrees> degrees;
 
 	// getter e setter
 
 	public Integer getId() {
 		return id;
+	}
+
+	public List<Degrees> getDegrees() {
+		return degrees;
+	}
+
+	public void setDegrees(List<Degrees> degrees) {
+		this.degrees = degrees;
 	}
 
 	public void setId(Integer id) {

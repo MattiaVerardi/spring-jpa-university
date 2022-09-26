@@ -2,18 +2,19 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
-	<th:block th:replace="fragments/risorse :: risorse"></th:block>
-	<title>Department Home</title>
+	<th:block th:replace="fragments/risorse :: head"></th:block>
+	<title>Departments</title>
 </head>
 
 <body>
-	<div>
-		<h1 class="text-center">Department</h1>
+	<nav th:replace="fragments/navbar :: navbar('departments')"></nav>
+	<div class="container">
+		<h1 class="text-center my-4">Departments</h1>
 		</hr>
 		<!--	<ul class="list-group mx-auto w-25">
 			<li class="list-group-item" th:each="departments : ${departments}" th:text="${departments.getName}"></li>
 		</ul> -->
-		<table class="table">
+		<table class="table my-4" th:if="${departments.size()>0}">
 
 			<thead>
 				<tr>
@@ -38,9 +39,10 @@
 
 		</table>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-		crossorigin="anonymous"></script>
+	<div class="alert alert-info text-center my-4" role="alert" th:unless="${departments.size()>0}">There is nothing to
+		show</div>
+	<script th:replace="fragments/risorse :: script"></script>
+
 </body>
 
 </html>
