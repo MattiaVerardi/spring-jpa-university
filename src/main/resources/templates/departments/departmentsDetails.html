@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<th:block th:replace="fragments/risorse :: head"></th:block>
+	<title th:text="${departmentsDetails.name}"></title>
+</head>
+
+<body>
+	<nav th:replace="fragments/navbar :: navbar('departments')"></nav>
+	<div class="container">
+		<h1 class="text-center my-4" th:text="${departmentsDetails.name}"></h1>
+		<hr>
+		<h2>Degrees</h2>
+		<ul class="list-group">
+			<li class="list-group-item" th:each="depDet : ${departmentsDetails.degrees}" th:text="${depDet.name}">
+			</li>
+		</ul>
+	</div>
+	<script th:replace="fragments/risorse :: script"></script>
+
+</body>
+
+</html>

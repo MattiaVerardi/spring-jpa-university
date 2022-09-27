@@ -17,7 +17,8 @@ public class DegreesController {
 
 	@GetMapping
 	private String degrees(Model m) {
-		m.addAttribute("degrees", repo.findAll());
+		m.addAttribute("degrees", repo.findAll()); // alternativa più corta per fare quello che facciamo al rigo
+													// successivo
 //		List<Degrees> degrees = (List<Degrees>) repo.findAll();
 //		m.addAttribute("degrees", degrees);
 		return "degrees/degrees";
