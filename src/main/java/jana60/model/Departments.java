@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -30,9 +29,7 @@ public class Departments {
 
 	private String headOfDepartment;
 
-	@OneToMany
-	@JoinColumn(name = "department_id") // ho inserito come column name "department_id" in quanto è l'unico attributo
-										// che regge la relazione con degrees. Stessa cosa va fatta nella classe Degrees
+	@OneToMany(mappedBy = "departments")
 	private List<Degrees> degrees;
 
 	// getter e setter

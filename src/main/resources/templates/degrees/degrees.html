@@ -14,22 +14,22 @@
 		<table class="table my-4" th:if="${degrees.size()>0}">
 			<thead>
 				<tr>
-					<th>name</th>
+					<th>name</th>					
+					<th>department</th>
 					<th>level</th>
 					<th>address</th>
 					<th>email</th>
 					<th>website</th>
-					<th>department</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="deg : ${degrees}">
 					<td th:text="${deg.name}"></td>
+					<td th:text="${deg.departments.getName}"></td>
 					<td th:text="${deg.level}"></td>
 					<td th:text="${deg.address}"></td>
 					<td th:text="${deg.email}"></td>
 					<td th:text="${deg.website}"></td>
-					<td th:text="${deg.departments.getName}"></td>
 				</tr>
 			</tbody>
 		</table>
